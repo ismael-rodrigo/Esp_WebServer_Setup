@@ -83,11 +83,11 @@ void guardar_conf() {
   gravar(75,a);
 
 
-  mensaje = "Configuração salva com sucesso!";
+  mensaje = alert;
   paginaconf();
 
   delay(4000);
-  ESP.reset();
+  ESP.restart();
 
 }
 

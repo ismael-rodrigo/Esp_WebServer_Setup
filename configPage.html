@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Configure as credenciais</title>
+
+<style>
+*{
+    font-family: 'Gill Sans', sans-serif;
+}
+
+body{
+    background-color:rgb(100, 100, 100);
+}
+.input{ 
+    color: seashell ;
+    background-color: rgb(45, 45, 45); 
+    border: 2px solid rgb(221, 187, 187);
+    border-radius: 5px; 
+    min-height: 40px;
+    
+    
+}
+.container{ 
+    display:flex ; 
+    flex-direction:column ; 
+    align-items: center;
+    gap: 10px;
+    padding:20px;
+    max-width: 700px;
+    margin: auto;
+}
+.send_butt{
+    min-height: 40px;
+}
+
+</style>
+        
+
+</head>
+<body>
+    <form action='guardar_conf' method='post'>
+        <div class='container'>    
+            <h1 style='text-align:center;' >Configure a sua rede WiFi</h1>
+            <input style='width:100% ;' placeholder='Nome da rede(SSID)' class='input' name='ssid' type='text'>
+            <input style='width:100% ;'  placeholder='Senha da rede' class='input' name='pass' type='password'>
+            <input style='width:100% ;'  class='send_butt' type='submit' value='Salvar'/>
+
+
+            <div style='border-radius: 4px; padding: 8px; background-color: rgb(48, 107, 87); width:fit-content;'>Dados salvo com sucesso! Reiniciando...</div>
+
+
+        </div>
+    </form>
+
+</body>
+</html>

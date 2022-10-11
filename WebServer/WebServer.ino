@@ -19,11 +19,9 @@ String mensaje = "";
 
 //-----------CODIGO HTML PAGINA DE CONFIGURACION---------------
 extern String pagina;
+extern String alert;
 
-String paginafin = "</body>"
-"</html>";
-
-
+String paginafin = "</div></form></body></html>";
 
 WiFiClient espClient;
 ESP8266WebServer server(80);
@@ -55,8 +53,17 @@ void setup() {
 
 
   setup_wifi();
+  server.on("/teste", teste);
+  server.begin();
 }
 
 void loop() {
-
+  server.handleClient();
+  delay(1);
 }
+
+void teste(){
+  digitalWrite(13,!digitalRead(13));
+}
+
+

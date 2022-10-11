@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+
+<style>
+#hours_available{
+    display: flex;
+    flex-direction: column;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.container{
+    width: 70%;
+}
+</style>
+<script type="text/javascript">
+var x= [];
+
+function changeText2(){
+
+    var value = document.getElementById('value').value;
+
+    document.getElementById('boldStuff2').innerHTML = value;
+
+    x.push(
+        `<p>${value}</p>`
+        );
+    document.getElementById('demo').innerHTML = x.map((e)=>e);
+}
+
+function changeValve(){
+    console.log(document.getElementById('valve').value)
+    if (document.getElementById('valve').value != 'none'){
+        document.getElementById('hours_available').style.display = 'flex'
+    }
+    else{
+        document.getElementById('hours_available').style.display = 'none'
+    }
+}
+ </script>
+
+
+ </head>
+ <body>
+    <div class="container">
+
+        <label for="cars">Selecione a Valvula:</label>
+        <select name="valve" id="valve" onchange="changeValve()">
+            <option value="none">Selecione</option>
+            <option value="v1">Valvula 1</option>
+            <option value="v2">Valvula 2</option>
+            <option value="v3">Valvula 3</option>
+        </select>
+    
+        <div  style="display: none;" id="hours_available">
+            Adicione os Horarios de funcionamento: 
+            <input type="text" id="value"><br> 
+            <input type='button' onclick='changeText2()' value='Adicionar Horario'/> 
+        
+            <p>Horarios cadastrados: <b id='boldStuff2'></b> </p> 
+            <p> Other people's names: </p>
+            
+            <div id = "demo" style="display: flex; flex-direction:column;" ></div> 
+           
+            
+        </div>
+    </div>
+ </body>
+ </html>
